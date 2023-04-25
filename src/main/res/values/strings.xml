@@ -1,0 +1,9 @@
+<resources>
+    <!-- Outras strings aqui -->
+    <string name="app_name">Trabalho de Android</string>
+    <string-array name="condicao_pagamento">
+        <item>Selecione a condição de pagamento</item>
+        <item>À vista</item>
+        <item>A prazo</item>
+    </string-array>
+</resources>

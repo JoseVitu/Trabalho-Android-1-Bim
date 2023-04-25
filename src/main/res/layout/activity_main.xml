@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Nome do cliente -->
+        <EditText
+            android:id="@+id/etNomeCliente"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Nome do cliente"
+            android:inputType="textPersonName"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- CPF do cliente -->
+        <EditText
+            android:id="@+id/etCpfCliente"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="CPF do cliente"
+            android:inputType="number"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etNomeCliente" />
+
+        <!-- Informações do item -->
+        <EditText
+            android:id="@+id/etItem"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Item"
+            android:inputType="text"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etCpfCliente" />
+
+        <EditText
+            android:id="@+id/etQuantidade"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Quantidade"
+            android:inputType="number"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etItem" />
+
+        <EditText
+            android:id="@+id/etValorUnitario"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Valor unitário"
+            android:inputType="numberDecimal"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etQuantidade" />
+
+        <!-- Botão para adicionar item -->
+        <Button
+            android:id="@+id/btnAdicionarItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Adicionar item"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etValorUnitario" />
+
+        <!-- Lista de itens adicionados -->
+        <TextView
+            android:id="@+id/tvItensPedido"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnAdicionarItem" />
+
+        <!-- Informações do pedido -->
+        <TextView
+            android:id="@+id/tvInfoPedido"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvItensPedido" />
+
+        <!-- Condição de pagamento -->
+        <Spinner
+            android:id="@+id/spinnerCondicaoPagamento"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:entries="@array/condicao_pagamento"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvInfoPedido" />
+
+        <!-- Informações de pagamento a prazo -->
+        <EditText
+            android:id="@+id/etQuantidadeParcelas"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Quantidade de parcelas"
+            android:inputType="number"
+            android:padding="16dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinnerCondicaoPagamento" />
+
+        <TextView
+            android:id="@+id/tvParcelas"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etQuantidadeParcelas" />
+
+        <!-- Botão para concluir o pedido -->
+        <Button
+            android:id="@+id/btnConcluirPedido"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calcular Pedido"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvParcelas" />
+        <Button
+            android:id="@+id/btnCalcularPedido"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Concluir pedido"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnConcluirPedido" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
